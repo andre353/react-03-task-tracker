@@ -1,16 +1,21 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-// destructure of the props object
 // inline styling:
 // <h1 style={{ color: 'red', backgroundColor: 'black' }}>Hello</h1>
 // or
 // <h1 style={headingStyle}>Hello</h1>
+
+// destructure of the props object
 const Header = ({title}) => {
+    const onClickHandler = (e) => {
+        console.log(e);
+    };
+// but onClick property value is to be passed to the Button component
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button color='green' text='Hello'/>
+            <Button onClickProperty={onClickHandler} color='green' text='Hello'/>
         </header>
     )
 }
